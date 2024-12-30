@@ -40,7 +40,8 @@ class MyTests : StringSpec() {
 class DDDExample : StringSpec() {
     init {
         "all OOBattleship test cases" {
-            val myTable = table(
+            val myTable =
+                table(
                     headers("navyTest", "guessTest", "result"),
                     row(JAVA_NAVY, 1, KOTLIN_NAVY),
                     row(KOTLIN_NAVY, 5, GROOVY_NAVY),
@@ -52,11 +53,10 @@ class DDDExample : StringSpec() {
                     row(KOTLIN_NAVY, 8, GROOVY_NAVY),
                     row(GROOVY_NAVY, 200, JAVA_NAVY),
                     row(GROOVY_NAVY, 201, GROOVY_NAVY)
-            )
+                )
             forAll(myTable) { navyTest, guessTest, result ->
                 OOBattleship(navyTest, guessTest) shouldBe result
             }
         }
     }
 }
-
